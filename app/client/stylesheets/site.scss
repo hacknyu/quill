@@ -1,6 +1,17 @@
 @import 'branding';
 @import 'custom';
-$font-body: 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
+
+@font-face {
+  font-family: 'Cooper-Regular';
+  src: url('../assets/fonts/Cooper-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Sofia-Pro';
+  src: url('../assets/fonts/Sofia-Pro-Regular.ttf');
+}
+
+$font-body: 'Sofia-Pro';
 $font-header: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;
 
 // Login screen variables
@@ -60,7 +71,7 @@ body {
 
 body {
   margin: 0;
-  font-family: 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-family: $font-body;
   font-weight: 300;
 
   > .container {
@@ -82,12 +93,14 @@ body {
 .ui.segment {
   border-radius: 0;
   box-shadow: none;
+  background: none;
+  border: none;
 }
 input {
-  border-radius: 0 !important;
+  border-radius: 5px !important;
 }
 .ui.button {
-  border-radius: 0;
+  border-radius: 5px;
   &.primary {
     background: $primary;
     &:hover {

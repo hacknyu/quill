@@ -2,6 +2,7 @@
 db/
 node_modules/
 semantic/
+app/client/assets/fonts/
 
 # Output
 app/client/build/
