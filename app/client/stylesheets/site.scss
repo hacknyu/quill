@@ -135,9 +135,6 @@ input {
 input{
     font-family: $font-body !important;
 }
-button{
-    background: $orange !important;
-}
 .title.divided:after{
     border-bottom: 0px !important;
 }
@@ -146,6 +143,9 @@ button{
 }
 .logo.item{
     background: $light-yellow !important;
+}
+.swal-button{
+    background: $orange !important;
 }
 
 fieldset {
