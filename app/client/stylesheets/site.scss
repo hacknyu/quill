@@ -138,6 +138,12 @@ input{
 button{
     background: $orange !important;
 }
+.title.divided:after{
+    border-bottom: 0px !important;
+}
+.page .form .title{
+    letter-spacing: 0px;
+}
 
 fieldset {
   padding: 0;
