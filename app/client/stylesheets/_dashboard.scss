@@ -17,6 +17,7 @@
       color: white;
       font-size: 1.3em;
       text-transform: uppercase;
+      border-radius: 5px;
 
       &.unverified {
         background: $status-unverified-color;

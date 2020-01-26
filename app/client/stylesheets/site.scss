@@ -12,14 +12,14 @@
 }
 
 $font-body: 'Sofia-Pro';
-$font-header: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;
+$font-header: 'Cooper-Regular';
 
 // Login screen variables
 $login-bg-color: $secondary;
 $login-color: $primary;
 $register-color: $tertiary;
 
-$status-unverified-color: rgb(82, 82, 82);
+$status-unverified-color: $grey;
 $status-incomplete-color: #F5F5F5;
 $status-submitted-color: lighten($secondary, 20%);
 $status-admitted-color: $primary;
@@ -30,13 +30,13 @@ $status-declined-color: $tertiary;
 $status-rejected-color: red; // Not used
 
 // Sidebar variables
-$sidebar-color: $primary;
+$sidebar-color: $light-yellow;
 $sidebar-width: 265px;
 $sidebar-transition-time: .5s;
 $sidebar-tab-size: 55px;
 
 // Page variables
-$page-header-color: $secondary;
+$page-header-color: black;
 
 $brand-primary: $primary;
 $brand-secondary: $secondary;
@@ -123,7 +123,9 @@ input {
     }
   }
 }
-
+.ui.purple.button{
+    background: $orange !important;
+}
 .ui.form select {
   height: 2.5em;
 }
