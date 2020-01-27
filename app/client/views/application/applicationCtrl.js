@@ -162,6 +162,42 @@ angular.module('reg')
                 }
               ]
             },
+            major: {
+              identifier: 'major',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please enter your major.'
+                }
+              ]
+            },
+            hear: {
+              identifier: 'hear',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please enter how you heard about HackNYU.'
+                }
+              ]
+            },
+            hackathons: {
+              identifier: 'hackathons',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select how many hackathons you\'ve been to.'
+                }
+              ]
+            },
+            hacknyu: {
+              identifier: 'hacknyu',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select whether you\'ve attended HackNYU in the past or not.'
+                }
+              ]
+            },
             coc: {
               identifier: 'coc',
               rules: [

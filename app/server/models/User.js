@@ -56,6 +56,12 @@ var profile = {
       values: '1 2 3'.split(' ')
     }
   },
+  hacknyu: {
+    type: String,
+    enum : {
+      values: 'Y N'.split(' ')
+    }
+  },
   coc: {
     type: Boolean,
     required: true,
@@ -362,7 +368,8 @@ schema.statics.validateProfile = function(profile, cb){
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
     ['AI', 'A', 'B', 'H', 'W', 'O', 'N'].indexOf(profile.race) > -1 &&
     ['M', '9', '10', '11', '12', '1U', '2U', '3U', '4U', '5U', '1G', '2G', '3G'].indexOf(profile.level) > -1 &&
-    ['1', '2', '3'].indexOf(profile.hackathons) > -1
+    ['1', '2', '3'].indexOf(profile.hackathons) > -1 &&
+    ['Y', 'N'].indexOf(profile.hacknyu) > -1
     ));
 };
 
