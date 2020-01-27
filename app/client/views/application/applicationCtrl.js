@@ -78,7 +78,7 @@ angular.module('reg')
               $state.go("app.dashboard");
             });
           }, response => {
-            swal("Uh oh!", "Something went wrong.", "error");
+            swal("Uh oh!", "Something went wrong. Make sure you responded to all the questions.", "error");
           });
       }
 
