@@ -162,6 +162,25 @@ angular.module('reg')
                 }
               ]
             },
+            coc: {
+              identifier: 'coc',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'You must agree to the code of conduct.'
+                }
+              ]
+            },
+            terms: {
+              identifier: 'terms',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'You must agree to the terms and conditions.'
+                }
+              ]
+            }
+
             /*
             year: {
               identifier: 'year',
