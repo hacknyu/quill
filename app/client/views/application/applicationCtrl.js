@@ -108,30 +108,21 @@ angular.module('reg')
         $('.ui.form').form({
           inline: true,
           fields: {
-            name: {
-              identifier: 'name',
+            firstName: {
+              identifier: 'firstName',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please enter your name.'
+                  prompt: 'Please enter your legal first name.'
                 }
               ]
             },
-            school: {
-              identifier: 'school',
+            lastName: {
+              identifier: 'lastName',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please enter your school name.'
-                }
-              ]
-            },
-            year: {
-              identifier: 'year',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please select your graduation year.'
+                  prompt: 'Please enter your legal last name.'
                 }
               ]
             },
@@ -144,15 +135,44 @@ angular.module('reg')
                 }
               ]
             },
-            adult: {
-              identifier: 'adult',
+            race: {
+              identifier: 'race',
               rules: [
                 {
-                  type: 'allowMinors',
-                  prompt: 'You must be an adult, or an MIT student.'
+                  type: 'empty',
+                  prompt: 'Please select a race/ethnicity.'
+                }
+              ]
+            },
+            school: {
+              identifier: 'school',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please enter your school name.'
+                }
+              ]
+            },
+            level: {
+              identifier: 'level',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select your current level of study.'
+                }
+              ]
+            },
+            /*
+            year: {
+              identifier: 'year',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select your graduation year.'
                 }
               ]
             }
+            */
           }
         });
       }

@@ -7,51 +7,63 @@ var mongoose   = require('mongoose'),
 var profile = {
 
   // Basic info
-  name: {
+  firstName: {
     type: String,
     min: 1,
     max: 100,
   },
-
-  adult: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
-
-  school: {
+  lastName: {
     type: String,
     min: 1,
-    max: 150,
+    max: 100,
   },
-
-  graduationYear: {
-    type: String,
-    enum: {
-      values: '2016 2017 2018 2019'.split(' '),
-    }
-  },
-
-  description: {
-    type: String,
-    min: 0,
-    max: 300
-  },
-
-  essay: {
-    type: String,
-    min: 0,
-    max: 1500
-  },
-
-  // Optional info for demographics
   gender: {
     type: String,
     enum : {
       values: 'M F O N'.split(' ')
     }
   },
-
+  race: {
+    type: String,
+    enum : {
+      values: 'AI A B H W O N'.split(' ')
+    }
+  },
+  school: {
+    type: String,
+    min: 1,
+    max: 150,
+  },
+  level: {
+    type: String,
+    enum : {
+      values: 'M 9 10 11 12 1U 2U 3U 4U 5U 1G 2G 3G'.split(' ')
+    }
+  },
+  major: {
+    type: String,
+    min: 0,
+    max: 100,
+  },
+  hear: {
+    type: String,
+    min: 0,
+    max: 100,
+  },
+  hackathons: {
+    type: String,
+    enum : {
+      values: '1 2 3'.split(' ')
+    }
+  },
+  /*
+  graduationYear: {
+    type: String,
+    enum: {
+      values: '2020 2021 2022 2023 2024 2025+'.split(' '),
+    }
+  },
+  */
 };
 
 // Only after confirmed

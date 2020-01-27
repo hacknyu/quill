@@ -21,10 +21,46 @@
         </div>
 
         <div class="field">
-          <label> Full Name </label>
+          <label> Legal First Name </label>
           <input type="text"
-                 name="name"
-                 ng-model="user.profile.name">
+                 name="firstName"
+                 ng-model="user.profile.firstName">
+        </div>
+
+        <div class="field">
+          <label> Legal Last Name </label>
+          <input type="text"
+                 name="lastName"
+                 ng-model="user.profile.lastName">
+        </div>
+
+        <div class="field">
+          <label>Gender</label>
+          <select
+            name="gender"
+            ng-model="user.profile.gender">
+            <option value="">Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="O">Non-Binary</option>
+            <option value="N">Prefer Not To Answer</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Race/Ethnicity</label>
+          <select
+            name="race"
+            ng-model="user.profile.race">
+            <option value="">Race/Ethnicity</option>
+            <option value="AI">American Indian or Alaskan Native</option>
+            <option value="A">Asian/Pacific Islander</option>
+            <option value="B">Black or African American</option>
+            <option value="H">Hispanic</option>
+            <option value="W">White/Caucasian</option>
+            <option value="O">Multiple Ethnicity/Other</option>
+            <option value="N">Prefer Not To Answer</option>
+          </select>
         </div>
 
         <div class="field" ng-show="autoFilledSchool">
@@ -46,28 +82,75 @@
         </div>
 
         <div class="field">
+          <label>Current Level of Study</label>
+          <select
+            name="level"
+            ng-model="user.profile.level">
+            <option value="">Current Level of Study</option>
+            <option value="M">Middle School</option>
+            <option value="9">9th Grade</option>
+            <option value="10">10th Grade</option>
+            <option value="11">11th Grade</option>
+            <option value="12">12th Grade</option>
+            <option value="1U">1st Year Undergrad</option>
+            <option value="2U">2nd Year Undergrad</option>
+            <option value="3U">3rd Year Undergrad</option>
+            <option value="4U">4th Year Undergrad</option>
+            <option value="5U">5th+ Year Undergrad</option>
+            <option value="1G">1st Year Grad</option>
+            <option value="2G">2nd Year Grad</option>
+            <option value="3G">3rd+ Year Grad</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>What is your major/field of study?</label>
+          <input type="text"
+                 ng-model="user.profile.major">
+        </div>
+
+        <div class="field">
+          <label>How did you hear about HackNYU?</label>
+          <input type="text"
+                 ng-model="user.profile.hear">
+        </div>
+
+        <div class="field">
+          <label>How many hackathons have you been to?</label>
+          <select
+            name="hackathons"
+            ng-model="user.profile.hackathons">
+            <option value="">Number of Hackathons</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3+</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Have you attended HackNYU as a participant before?</label>
+          <select
+            name="hacknyu"
+            ng-model="user.profile.hacknyu">
+            <option value="">Attended in the Past</option>
+            <option value="Y">Yes</option>
+            <option value="N">No</option>
+          </select>
+        </div>
+
+        <!--
+        <div class="field">
           <label>Graduation Year</label>
           <select
             name="year"
             ng-model="user.profile.graduationYear">
             <option value="">Graduation Year</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Gender</label>
-          <select
-            name="gender"
-            ng-model="user.profile.gender">
-            <option value="">Gender</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-            <option value="O">Other</option>
-            <option value="N">I prefer not to answer.</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025+">2025+</option>
           </select>
         </div>
 
@@ -85,21 +168,19 @@
           <textarea ng-model="user.profile.essay">
           </textarea>
         </div>
+        -->
 
-        <div class="field"
-             ng-hide="isMitStudent">
-          <p>
-            Because of limitations imposed by MIT, we are not legally allowed to host
-            non-MIT minors (those under 18) for HackMIT 2015. Checking the box below affirms that you are or will be 18 years or older by September 19th, 2015.
-          </p>
-          <p>
-            <strong>
-            We will be checking ID. If you are a non-MIT minor, you will be turned away at the door.
-            </strong>
-          </p>
+        <div class="field">
           <div class="ui checkbox">
-            <input type="checkbox" id="adult" ng-model="user.profile.adult">
-            <label for="adult">I am 18 or older.</label>
+            <input type="checkbox" id="coc" ng-model="user.profile.coc">
+            <label for="coc"> I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH Code of Conduct</a></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui checkbox">
+            <input type="checkbox" id="coc" ng-model="user.profile.coc">
+            <label for="coc"> I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the <a href="https://mlh.io/privacy">MLH Privacy Policy</a>. I further agree to the terms of both the <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions">MLH Contest Terms and Conditions</a> and the <a href="https://mlh.io/privacy">MLH Privacy Policy</a></label>
           </div>
         </div>
 
