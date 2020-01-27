@@ -56,6 +56,16 @@ var profile = {
       values: '1 2 3'.split(' ')
     }
   },
+  coc: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  terms: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
   /*
   graduationYear: {
     type: String,
@@ -342,11 +352,17 @@ schema.statics.getByToken = function(token, callback){
 
 schema.statics.validateProfile = function(profile, cb){
   return cb(!(
-    profile.name.length > 0 &&
-    profile.adult &&
+    profile.firstName.length > 0 &&
+    profile.lastName.length > 0 &&
     profile.school.length > 0 &&
-    ['2016', '2017', '2018', '2019'].indexOf(profile.graduationYear) > -1 &&
-    ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
+    profile.major.length > 0 &&
+    profile.hear.length > 0 &&
+    profile.coc &&
+    profile.terms &&
+    ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
+    ['AI', 'A', 'B', 'H', 'W', 'O', 'N'].indexOf(profile.race) > -1 &&
+    ['M', '9', '10', '11', '12', '1U', '2U', '3U', '4U', '5U', '1G', '2G', '3G'].indexOf(profile.level) > -1 &&
+    ['1', '2', '3'].indexOf(profile.hackathons) > -1
     ));
 };
 
