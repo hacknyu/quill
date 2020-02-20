@@ -20,8 +20,6 @@ angular.module('reg')
 
       _setupForm();
 
-      $scope.fileName = user._id + "_" + user.profile.name.split(" ").join("_");
-
       // -------------------------------
       // All this just for dietary restriction checkboxes fml
 
@@ -121,6 +119,7 @@ angular.module('reg')
       }
 
       $scope.submitForm = function(){
+          console.log("test");
         if ($('.ui.form').form('is valid')){
           _updateUser();
         }
