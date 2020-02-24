@@ -101,6 +101,24 @@
 
           <div class="field">
             <label>
+              Will you be under 18 years old on March 6, 2020?
+            </label>
+            <div class="ui checkbox">
+              <input type="checkbox" ng-model="user.confirmation.isMinor">
+              <label> Yes, I'll be under 18 years old on March 6, 2020 </label>
+            </div>
+          </div>
+
+          <div
+            class="field"
+            ng-show="user.confirmation.isMinor">
+            <label>
+              Please note that you and your parent or legal guardian must fill out a minor liability form in order to come to the event
+            </label>
+          </div>
+
+          <div class="field">
+            <label>
               Are you an NYU student?
             </label>
             <div class="ui checkbox">

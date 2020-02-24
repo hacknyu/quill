@@ -96,6 +96,7 @@
             <th>E-mail address</th>
             <th>School</th>
             <th>Year</th>
+            <th>Minor</th>
             <th>V/S/A/C</th>
             <th>Actions</th>
           </tr>
@@ -124,6 +125,10 @@
             <td
               class="collapsing">
               {{user.profile.level}}
+            </td>
+            <td
+              class="collapsing" style="background-color: {{user.confirmation.isMinor ? 'red' : 'lightgreen'}}">
+              {{user.confirmation.isMinor ? "Yes" : "No"}}
             </td>
             <td
               class="collapsing">

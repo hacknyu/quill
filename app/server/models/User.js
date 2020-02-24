@@ -88,6 +88,8 @@ var confirmation = {
   gradYear: String,
   track: String,
 
+  isMinor: Boolean,
+
   goesToNYU: Boolean,
   netID: String,
   nyuSchool: String,
