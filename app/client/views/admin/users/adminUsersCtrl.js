@@ -67,6 +67,15 @@ angular.module('reg')
       $scope.toggleCheckIn = function($event, user, index) {
         $event.stopPropagation();
 
+        if (!user.status.confirmed){
+          swal({
+            title: "Unable to Check In",
+            text: user.profile.firstName + " has not confirmed, so they can't be checked in!",
+            icon: "warning",
+          })
+          return;
+        }
+
         if (!user.status.checkedIn){
           swal({
             title: "Whoa, wait a minute!",
