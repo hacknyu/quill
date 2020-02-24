@@ -278,11 +278,26 @@ angular.module('reg')
                 name: 'Gender',
                 value: user.profile.gender
               },{
+                name: 'Race',
+                value: user.profile.race
+              },{
                 name: 'School',
                 value: user.profile.school
               },{
-                name: 'Year',
+                name: 'Level of Study',
                 value: user.profile.level
+              },{
+                name: 'Major',
+                value: user.profile.major
+              },{
+                name: 'How did you hear about HackNYU',
+                value: user.profile.hear
+              },{
+                name: 'HackNYU would be which hackathon for you?',
+                value: user.profile.hackathons
+              },{
+                name: 'Attended HackNYU in the past?',
+                value: user.profile.hacknyu
               }
             ]
           },{
@@ -290,29 +305,85 @@ angular.module('reg')
             fields: [
               {
                 name: 'Phone Number',
-                value: user.confirmation.phoneNumber
+                value: user.confirmation.phone
               },{
-                name: 'Dietary Restrictions',
-                value: user.confirmation.dietaryRestrictions.join(', ')
+                name: 'Date of Birth',
+                value: user.confirmation.dob
               },{
                 name: 'Shirt Size',
-                value: user.confirmation.shirtSize
+                value: user.confirmation.shirt
               },{
-                name: 'Major',
-                value: user.confirmation.major
+                name: 'Graduation Month',
+                value: user.confirmation.gradMonth
+              },{
+                name: 'Graduation Year',
+                value: user.confirmation.gradYear
+              },{
+                name: 'Interested in Track',
+                value: user.confirmation.track
+              },{
+                name: 'Is Minor',
+                value: user.confirmation.isMinor,
+                type: 'boolean'
+              },{
+                name: 'Is NYU Student',
+                value: user.confirmation.goesToNYU,
+                type: 'boolean'
+              },{
+                name: 'NetID',
+                value: user.confirmation.netID
+              },{
+                name: 'NYU School',
+                value: user.confirmation.nyuSchool
+              },{
+                name: 'Is International',
+                value: user.confirmation.isInternational,
+                type: 'boolean'
+              },{
+                name: 'International Country',
+                value: user.confirmation.internationalCountry
+              },{
+                name: 'Wants Hardware',
+                value: user.confirmation.wantsHardware,
+                type: 'boolean'
+              },{
+                name: 'Hardware Wanted',
+                value: user.confirmation.hardware
+              },{
+                name: 'Has Dietary Restrictions',
+                value: user.confirmation.hasDietaryRestrictions,
+                type: 'boolean'
+              },{
+                name: 'Dietary Restrictions',
+                value: user.confirmation.dietaryRestrictions
+              },{
+                name: 'Has Accessibility Needs',
+                value: user.confirmation.hasAccessibilityNeeds,
+                type: 'boolean'
+              },{
+                name: 'AccessibilityNeeds',
+                value: user.confirmation.accessibilityNeeds
               },{
                 name: 'Github',
                 value: user.confirmation.github
               },{
+                name: 'Linkedin',
+                value: user.confirmation.linkedin
+              },{
                 name: 'Website',
                 value: user.confirmation.website
               },{
-                name: 'Needs Hardware',
-                value: user.confirmation.wantsHardware,
-                type: 'boolean'
+                name: 'Emergency Contact Name',
+                value: user.confirmation.emergencyName,
               },{
-                name: 'Hardware Requested',
-                value: user.confirmation.hardware
+                name: 'Emergency Contact Relation',
+                value: user.confirmation.emergencyRelation
+              },{
+                name: 'Emergency Contact Phone Number',
+                value: user.confirmation.emergencyPhone,
+              },{
+                name: 'Additional Notes',
+                value: user.confirmation.notes
               }
             ]
           }
