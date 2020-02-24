@@ -91,14 +91,14 @@
         class="ui celled selectable compact users table">
         <thead>
           <tr>
+            <th>Actions</th>
+            <th>V/S/A/C</th>
+            <th>Minor</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>E-mail address</th>
             <th>School</th>
             <th>Year</th>
-            <th>Minor</th>
-            <th>V/S/A/C</th>
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -106,30 +106,31 @@
             ng-click="selectUser(user)"
             ng-repeat="user in users"
             ng-class="rowClass(user)">
-            <td>
-              <strong>
-                {{user.profile.firstName}}
-                &nbsp;
 
-              </strong>
-            </td>
-            <td>
-              <strong>
-                {{user.profile.lastName}}
-                &nbsp;
+            <td
+              class="right aligned collapsing">
 
-              </strong>
+              <button
+                class="accept ui circular mini basic green icon button"
+                ng-click="acceptUser($event, user, $index)">
+                <i class="add user icon"></i>
+              </button>
+
+              <button
+                ng-click="toggleCheckIn($event, user, $index)"
+                class="ui circular mini basic green icon button">
+
+                <i
+                  ng-if="!user.status.checkedIn"
+                  class="flag outline icon"></i>
+
+                <i
+                  ng-if="user.status.checkedIn"
+                  class="green flag icon"></i>
+
+              </button>
             </td>
-            <td>{{user.email}}</td>
-            <td>{{user.profile.school}}</td>
-            <td
-              class="collapsing">
-              {{user.profile.level}}
-            </td>
-            <td
-              class="collapsing" style="background-color: {{user.confirmation.isMinor ? 'red' : 'lightgreen'}}">
-              {{user.confirmation.isMinor ? "Yes" : "No"}}
-            </td>
+
             <td
               class="collapsing">
 
@@ -184,28 +185,29 @@
             </td>
 
             <td
-              class="right aligned collapsing">
+              class="collapsing" style="background-color: {{user.confirmation.isMinor ? 'red' : 'lightgreen'}}">
+              {{user.confirmation.isMinor ? "Yes" : "No"}}
+            </td>
 
-              <button
-                class="accept ui circular mini basic green icon button"
-                ng-click="acceptUser($event, user, $index)">
-                <i class="add user icon"></i>
-              </button>
+            <td>
+              <strong>
+                {{user.profile.firstName}}
+                &nbsp;
 
-              <button
-                ng-click="toggleCheckIn($event, user, $index)"
-                class="ui circular mini basic green icon button">
+              </strong>
+            </td>
+            <td>
+              <strong>
+                {{user.profile.lastName}}
+                &nbsp;
 
-                <i
-                  ng-if="!user.status.checkedIn"
-                  class="flag outline icon"></i>
-
-                <i
-                  ng-if="user.status.checkedIn"
-                  class="green flag icon"></i>
-
-              </button>
-
+              </strong>
+            </td>
+            <td>{{user.email}}</td>
+            <td>{{user.profile.school}}</td>
+            <td
+              class="collapsing">
+              {{user.profile.level}}
             </td>
           </tr>
         </tbody>
