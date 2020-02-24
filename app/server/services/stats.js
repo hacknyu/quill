@@ -170,16 +170,6 @@ function calculateStats(){
         newStats.hostNeededNone
           += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "N" ? 1 : 0;
 
-        // Dietary restrictions
-        if (user.confirmation.dietaryRestrictions){
-          user.confirmation.dietaryRestrictions.forEach(function(restriction){
-            if (!newStats.dietaryRestrictions[restriction]){
-              newStats.dietaryRestrictions[restriction] = 0;
-            }
-            newStats.dietaryRestrictions[restriction] += 1;
-          });
-        }
-
         // Count checked in
         newStats.checkedIn += user.status.checkedIn ? 1 : 0;
 

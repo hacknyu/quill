@@ -330,6 +330,11 @@ UserController.updateConfirmationById = function (id, confirmation, callback){
       return callback(err);
     }
 
+    User.validateConfirmation(confirmation, function(err2){
+        if (err2){
+            return callback({message: 'invalid confirmation form'});
+        }
+
     // Make sure that the user followed the deadline, but if they're already confirmed
     // that's okay.
     if (Date.now() >= user.status.confirmBy && !user.status.confirmed){
@@ -355,6 +360,8 @@ UserController.updateConfirmationById = function (id, confirmation, callback){
         new: true
       },
       callback);
+
+  });
 
   });
 };

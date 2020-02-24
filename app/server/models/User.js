@@ -72,59 +72,53 @@ var profile = {
     required: true,
     default: false,
   },
-  /*
-  graduationYear: {
-    type: String,
-    enum: {
-      values: '2020 2021 2022 2023 2024 2025+'.split(' '),
-    }
-  },
-  */
 };
 
 // Only after confirmed
 var confirmation = {
-  phoneNumber: String,
-  dietaryRestrictions: [String],
-  shirtSize: {
+  phone: String,
+  dob: Date,
+  shirt: {
     type: String,
     enum: {
-      values: 'XS S M L XL XXL WXS WS WM WL WXL WXXL'.split(' ')
+      values: 'XS S M L XL XXL'.split(' ')
     }
   },
+  gradMonth: String,
+  gradYear: String,
+  track: String,
+
+  goesToNYU: Boolean,
+  netID: String,
+  nyuSchool: String,
+
+  isInternational: Boolean,
+  internationalCountry: String,
+
   wantsHardware: Boolean,
   hardware: String,
 
-  major: String,
+  hasDietaryRestrictions: Boolean,
+  dietaryRestrictions: String,
+
+  hasAccessibilityNeeds: Boolean,
+  accessibilityNeeds: String,
+
   github: String,
-  twitter: String,
+  linkedin: String,
   website: String,
-  resume: String,
 
-  needsReimbursement: Boolean,
-  address: {
-    name: String,
-    line1: String,
-    line2: String,
-    city: String,
-    state: String,
-    zip: String,
-    country: String
-  },
-  receipt: String,
-
-  hostNeededFri: Boolean,
-  hostNeededSat: Boolean,
-  genderNeutral: Boolean,
-  catFriendly: Boolean,
-  smokingFriendly: Boolean,
-  hostNotes: String,
+  emergencyName: String,
+  emergencyRelation: String,
+  emergencyPhone: String,
 
   notes: String,
 
-  signatureLiability: String,
-  signaturePhotoRelease: String,
-  signatureCodeOfConduct: String,
+  apis: Boolean,
+  photos: Boolean,
+  minor: Boolean,
+  nyucoc: Boolean,
+  sponsors: Boolean,
 };
 
 var status = {
@@ -370,6 +364,29 @@ schema.statics.validateProfile = function(profile, cb){
     ['M', '9', '10', '11', '12', '1U', '2U', '3U', '4U', '5U', '1G', '2G', '3G'].indexOf(profile.level) > -1 &&
     ['1', '2', '3'].indexOf(profile.hackathons) > -1 &&
     ['Y', 'N'].indexOf(profile.hacknyu) > -1
+    ));
+};
+
+schema.statics.validateConfirmation = function(confirmation, cb){
+  return cb(!(
+    confirmation.phone.length > 0 &&
+    confirmation.dob.length > 0 &&
+    confirmation.shirt.length > 0 &&
+    confirmation.gradMonth.length > 0 &&
+    confirmation.gradYear.length > 0 &&
+    (!confirmation.goesToNYU || (confirmation.netID && confirmation.netID.length > 0 && confirmation.nyuSchool && confirmation.nyuSchool.length > 0)) &&
+    (!confirmation.isInternational || (confirmation.internationalCountry && confirmation.internationalCountry.length > 0)) &&
+    (!confirmation.wantsHardware || (confirmation.hardware && confirmation.hardware.length > 0)) &&
+    (!confirmation.hasDietaryRestrictions || (confirmation.dietaryRestrictions && confirmation.dietaryRestrictions.length > 0)) &&
+    (!confirmation.hasAccessibilityNeeds || (confirmation.accessibilityNeeds && confirmation.accessibilityNeeds.length > 0)) &&
+    confirmation.emergencyName.length > 0 &&
+    confirmation.emergencyRelation.length > 0 &&
+    confirmation.emergencyPhone.length > 0 &&
+    confirmation.apis &&
+    confirmation.photos &&
+    confirmation.minor &&
+    confirmation.nyucoc &&
+    confirmation.sponsors
     ));
 };
 

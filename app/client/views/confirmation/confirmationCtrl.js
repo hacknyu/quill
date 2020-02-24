@@ -21,38 +21,9 @@ angular.module('reg')
       _setupForm();
 
       // -------------------------------
-      // All this just for dietary restriction checkboxes fml
-
-      var dietaryRestrictions = {
-        'Vegetarian': false,
-        'Vegan': false,
-        'Halal': false,
-        'Kosher': false,
-        'Nut Allergy': false
-      };
-
-      if (user.confirmation.dietaryRestrictions){
-        user.confirmation.dietaryRestrictions.forEach(function(restriction){
-          if (restriction in dietaryRestrictions){
-            dietaryRestrictions[restriction] = true;
-          }
-        });
-      }
-
-      $scope.dietaryRestrictions = dietaryRestrictions;
-
-      // -------------------------------
 
       function _updateUser(e){
         var confirmation = $scope.user.confirmation;
-        // Get the dietary restrictions as an array
-        var drs = [];
-        Object.keys($scope.dietaryRestrictions).forEach(function(key){
-          if ($scope.dietaryRestrictions[key]){
-            drs.push(key);
-          }
-        });
-        confirmation.dietaryRestrictions = drs;
 
         UserService
           .updateConfirmation(user._id, confirmation)
@@ -61,7 +32,8 @@ angular.module('reg')
               $state.go("app.dashboard");
             });
           }, response => {
-            swal("Uh oh!", "Something went wrong.", "error");
+            console.log(response);
+            swal("Uh oh!", "Please Fill Out The Required Fields", "error");
           });
       }
 
@@ -87,30 +59,102 @@ angular.module('reg')
                 }
               ]
             },
-            signatureLiability: {
-              identifier: 'signatureLiabilityWaiver',
+            dob: {
+              identifier: 'dob',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please type your digital signature.'
+                  prompt: 'Please enter your date of birth.'
                 }
               ]
             },
-            signaturePhotoRelease: {
-              identifier: 'signaturePhotoRelease',
+            gradMonth: {
+              identifier: 'gradMonth',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please type your digital signature.'
+                  prompt: 'Please enter your graduation month.'
                 }
               ]
             },
-            signatureCodeOfConduct: {
-              identifier: 'signatureCodeOfConduct',
+            gradYear: {
+              identifier: 'gradYear',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please type your digital signature.'
+                  prompt: 'Please enter your graduation year.'
+                }
+              ]
+            },
+            emergencyName: {
+              identifier: 'emergencyName',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please enter your emergency contact\'s name.'
+                }
+              ]
+            },
+            emergencyRelation: {
+              identifier: 'emergencyRelation',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please enter your emergency contact\'s relation to you.'
+                }
+              ]
+            },
+            emergencyPhone: {
+              identifier: 'emergencyPhone',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please enter your emergency contact\'s phone number.'
+                }
+              ]
+            },
+            apis: {
+              identifier: 'apis',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'You must agree to the API terms of use.'
+                }
+              ]
+            },
+            photos: {
+              identifier: 'photos',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'You must agree to the photos agreement'
+                }
+              ]
+            },
+            minor: {
+              identifier: 'minor',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'You must agree to the minors participation agreement'
+                }
+              ]
+            },
+            nyucoc: {
+              identifier: 'nyucoc',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'You must agree to the NYU Code of Conduct'
+                }
+              ]
+            },
+            sponsors: {
+              identifier: 'sponsors',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'You must agree to the sponsors agreement'
                 }
               ]
             },
@@ -119,10 +163,10 @@ angular.module('reg')
       }
 
       $scope.submitForm = function(){
-          console.log("test");
         if ($('.ui.form').form('is valid')){
           _updateUser();
+        } else {
+            swal("Uh oh!", "Please Fill The Required Fields", "error");
         }
       };
-
     }]);

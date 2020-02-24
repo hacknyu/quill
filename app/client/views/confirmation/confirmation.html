@@ -17,7 +17,7 @@
             <label> What's your phone number? *</label>
             <input type="tel"
                    name="phone"
-                   ng-model="user.confirmation.phoneNumber"
+                   ng-model="user.confirmation.phone"
                    placeholder="(123) - 555 - 1234"
                    required>
           </div>
@@ -34,7 +34,7 @@
             <label> Shirt Size *</label>
             <select
               name="shirt"
-              ng-model="user.confirmation.shirtSize"
+              ng-model="user.confirmation.shirt"
               required>
               <option value="">Shirt Size</option>
               <option value="XS">XS</option>
@@ -99,7 +99,6 @@
             </select>
           </div>
 
-
           <div class="field">
             <label>
               Are you an NYU student?
@@ -122,7 +121,7 @@
           <div class="field"
             ng-show="user.confirmation.goesToNYU">
 
-            <label> Which NYU school do you go to? </label> *
+            <label> Which NYU school do you go to? *</label>
             <select
               name="nyuSchool"
               ng-model="user.confirmation.nyuSchool">
@@ -250,9 +249,9 @@
           <div class="field">
             <label> Personal Website </label>
             <input type="text"
-                   name="personal"
+                   name="website"
                    placeholder="https://me.com"
-                   ng-model="user.confirmation.personal">
+                   ng-model="user.confirmation.website">
           </div>
 
           <br>
@@ -280,8 +279,8 @@
 
             <label>Emergency Contact Phone Number *</label>
             <input type="tel"
-                   name="phone"
-                   ng-model="user.confirmation.phoneNumber"
+                   name="emergencyPhone"
+                   ng-model="user.confirmation.emergencyPhone"
                    placeholder="(123) - 555 - 1234"
                    required>
           </div>
@@ -343,8 +342,8 @@
           <div class="field" ng-hide="regIsClosed">
             <button type="submit"
                     class="fluid ui purple button"
-                    ng-click="">
-              Submit RSVP (disabled for now)
+                    ng-click="submitForm()">
+              Submit Confirmation
             </button>
           </div>
 
