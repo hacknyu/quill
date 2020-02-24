@@ -8,12 +8,13 @@
 
       <div class="ui form">
 
+        <div class="divided title">Required Questions Are Marked With A Star (*)</div>
         <div class="divided title">Basic Details</div>
 
         <fieldset ng-disabled="pastConfirmation">
 
           <div class="field">
-            <label> What's your phone number? (required) </label>
+            <label> What's your phone number? *</label>
             <input type="tel"
                    name="phone"
                    ng-model="user.confirmation.phoneNumber"
@@ -22,57 +23,31 @@
           </div>
 
           <div class="field">
-            <label> Please Provide Emergency Contact Info (required) </label>
-            <label>Emergency Contact Name</label>
-            <input type="text"
-                   name="emergencyName"
-                   ng-model="user.confirmation.emergencyName"
-                   required>
-
-                   <br>
-                   <br>
-
-            <label>Emergency Contact Relation to You</label>
-            <input type="text"
-                   name="emergencyRelation"
-                   ng-model="user.confirmation.emergencyRelation"
-                   required>
-
-                   <br>
-                   <br>
-
-            <label>Emergency Contact Phone Number</label>
-            <input type="tel"
-                   name="phone"
-                   ng-model="user.confirmation.phoneNumber"
-                   placeholder="(123) - 555 - 1234"
+            <label> What's your date of birth? *</label>
+            <input type="date"
+                   name="dob"
+                   ng-model="user.confirmation.dob"
                    required>
           </div>
 
           <div class="field">
-            <label> Shirt Size (required) </label>
+            <label> Shirt Size *</label>
             <select
               name="shirt"
               ng-model="user.confirmation.shirtSize"
               required>
               <option value="">Shirt Size</option>
-              <option value="XS">Unisex X-Small</option>
-              <option value="S">Unisex Small</option>
-              <option value="M">Unisex Medium</option>
-              <option value="L">Unisex Large</option>
-              <option value="XL">Unisex X-Large</option>
-              <option value="XXL">Unisex XX-Large</option>
-              <option value="WXS">Women's X-Small</option>
-              <option value="WS">Women's Small</option>
-              <option value="WM">Women's Medium</option>
-              <option value="WL">Women's Large</option>
-              <option value="WXL">Women's X-Large</option>
-              <option value="WXXL">Women's XX-Large</option>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
             </select>
           </div>
 
           <div class="field">
-            <label> Expected Graduation Month (required)</label>
+            <label> Expected Graduation Month *</label>
             <select
               name="gradMonth"
               ng-model="user.confirmation.gradMonth"
@@ -94,7 +69,7 @@
           </div>
 
           <div class="field">
-            <label> Expected Graduation Year (required) </label>
+            <label> Expected Graduation Year *</label>
             <select
               name="gradYear"
               ng-model="user.confirmation.gradYear"
@@ -110,23 +85,11 @@
           </div>
 
           <div class="field">
-            <label> Are you an International Student? (required) </label>
-            <select
-              name="international"
-              ng-model="user.confirmation.international"
-              required>
-              <option value="">Status</option>
-              <option value="Y">Yes</option>
-              <option value="N">No</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label> Which track are you most interested in? </label>
+            <label> Which track are you most interested in? You don't have to stick to it, we're just gauging interest.</label>
             <select
               name="track"
               ng-model="user.confirmation.track"
-              required>
+              >
               <option value="">Track</option>
               <option value="S">Sustainability</option>
               <option value="E">Education</option>
@@ -136,25 +99,6 @@
             </select>
           </div>
 
-          <div class="field">
-            <label> Dietary Restrictions </label>
-
-            <p>
-              If your restriction is not included here, please let us know in the additional notes at the bottom.
-            </p>
-          </div>
-
-          <div class="inline fields">
-            <div class="field"
-              ng-repeat="(key, value) in dietaryRestrictions">
-
-              <div class="ui checkbox">
-                <input type="checkbox" ng-model="dietaryRestrictions[key]" />
-                <label>{{key}}</label>
-              </div>
-
-            </div>
-          </div>
 
           <div class="field">
             <label>
@@ -162,7 +106,7 @@
             </label>
             <div class="ui checkbox">
               <input type="checkbox" ng-model="user.confirmation.goesToNYU">
-              <label> Yes, I am an NYU student </label>
+              <label> Yes, I'm an NYU student </label>
             </div>
           </div>
 
@@ -170,7 +114,7 @@
             class="field"
             ng-show="user.confirmation.goesToNYU">
             <label>
-              What is your NetID?
+              What's your NetID? *
             </label>
             <input placeholder="abc123" type="text" ng-model="user.confirmation.netID">
           </div>
@@ -178,7 +122,7 @@
           <div class="field"
             ng-show="user.confirmation.goesToNYU">
 
-            <label> Which NYU school do you go to? </label>
+            <label> Which NYU school do you go to? </label> *
             <select
               name="nyuSchool"
               ng-model="user.confirmation.nyuSchool">
@@ -209,11 +153,30 @@
 
           <div class="field">
             <label>
-              Will you be needing hardware?
+              Are you an international student?
+            </label>
+            <div class="ui checkbox">
+              <input type="checkbox" ng-model="user.confirmation.isInternational">
+              <label> Yes, I'm an international student </label>
+            </div>
+          </div>
+
+          <div
+            class="field"
+            ng-show="user.confirmation.isInternational">
+            <label>
+              Which country are you from? *
+            </label>
+            <input type="text" ng-model="user.confirmation.internationalCountry">
+          </div>
+
+          <div class="field">
+            <label>
+              Do you want hardware for your project?
             </label>
             <div class="ui checkbox">
               <input type="checkbox" ng-model="user.confirmation.wantsHardware">
-              <label> Yes, I would like to use hardware in my hack. </label>
+              <label> Yes, I want hardware for my project. </label>
             </div>
           </div>
 
@@ -221,15 +184,49 @@
             class="field"
             ng-show="user.confirmation.wantsHardware">
             <label>
-              What kind of hardware would be useful for you?
+              What kind of hardware would be useful for you? *
             </label>
-            <p>
-              We will have a hardware checkout, and we'll try our best to provide things that would be useful to you - however, we can't guarantee everything. We will publish a list of available hardware closer to the day of the event.
-            </p>
             <input type="text" ng-model="user.confirmation.hardware">
           </div>
 
-          <br>
+          <div class="field">
+            <label>
+              Do you have dietary restrictions?
+            </label>
+            <div class="ui checkbox">
+              <input type="checkbox" ng-model="user.confirmation.hasDietaryRestrictions">
+              <label> Yes, I have dietary restrictions </label>
+            </div>
+          </div>
+
+          <div
+            class="field"
+            ng-show="user.confirmation.hasDietaryRestrictions">
+            <label>
+              What are your dietary restrictions? *
+            </label>
+            <input type="text" ng-model="user.confirmation.dietaryRestrictions">
+          </div>
+
+          <div class="field">
+            <label>
+              Do you have any accessibility needs?
+            </label>
+            <div class="ui checkbox">
+              <input type="checkbox" ng-model="user.confirmation.hasAccessibilityNeeds">
+              <label> Yes, I have accessibility needs </label>
+            </div>
+          </div>
+
+          <div
+            class="field"
+            ng-show="user.confirmation.hasAccessibilityNeeds">
+            <label>
+              What are your accessibility needs? *
+            </label>
+            <input type="text" ng-model="user.confirmation.accessibilityNeeds">
+          </div>
+
           <br>
 
           <div class="divided title"> Portfolios </div>
@@ -261,15 +258,41 @@
           <br>
           <br>
 
-          <div class="divided title"> Everything Else </div>
+          <div class="divided title">Emergency Contact Info</div>
+          <div class="field">
+            <label>Emergency Contact Name *</label>
+            <input type="text"
+                   name="emergencyName"
+                   ng-model="user.confirmation.emergencyName"
+                   required>
 
+                   <br>
+                   <br>
+
+            <label>Emergency Contact Relation to You *</label>
+            <input type="text"
+                   name="emergencyRelation"
+                   ng-model="user.confirmation.emergencyRelation"
+                   required>
+
+                   <br>
+                   <br>
+
+            <label>Emergency Contact Phone Number *</label>
+            <input type="tel"
+                   name="phone"
+                   ng-model="user.confirmation.phoneNumber"
+                   placeholder="(123) - 555 - 1234"
+                   required>
+          </div>
+
+          <br>
+
+          <div class="divided title"> Everything Else </div>
           <div class="field">
             <label>
-              Additional Notes
+              If there's anything else you want to let us know, tell us here!
             </label>
-            <p>
-              If there's anything else you need to let us know, tell us here!
-            </p>
             <textarea
               ng-model="user.confirmation.notes"></textarea>
           </div>
@@ -285,34 +308,34 @@
           <div class="field">
             <div class="ui checkbox">
               <input type="checkbox" ng-model="user.confirmation.apis">
-              <label> I understand and accept the Terms of Use</label>
+              <label> I understand and accept the Terms of Use. *</label>
             </div>
           </div>
 
           <div class="field">
             <div class="ui checkbox">
               <input type="checkbox" ng-model="user.confirmation.photos">
-              <label> By checking this box, I hereby give permission to New York University and HackNYU to use the photograph or video in which my picture or image appears for all purposes and in all media, including – without limitation – brochures, advertisements, and social media platforms. </label>
+              <label> By checking this box, I hereby give permission to New York University and HackNYU to use the photograph or video in which my picture or image appears for all purposes and in all media, including – without limitation – brochures, advertisements, and social media platforms. *</label>
             </div>
           </div>
 
           <div class="field">
             <div class="ui checkbox">
               <input type="checkbox" ng-model="user.confirmation.minor">
-              <label> By checking this box, I hereby understand that if I am under the age of 18 years old, I, along with my parent or legal guardian, must sign and return the minors liability form, which will be emailed to me upon submitting my application, for me to be considered as an applicant. </label>
+              <label> By checking this box, I hereby understand that if I am under the age of 18 years old, I, along with my parent or legal guardian, must sign and return the minors liability form, which will be emailed to me upon submitting my application, for me to be considered as an applicant. *</label>
             </div>
           </div>
 
           <div class="field">
             <div class="ui checkbox">
               <input type="checkbox" ng-model="user.confirmation.nyucoc">
-              <label> By checking this box, I hereby acknowledge that I have read and agree to comply with New York University’s Code of Conduct, which can be found here: <a href="https://www.nyu.edu/students/student-information-and-resources/student-community-standards/university-student-conduct-policies.html">https://www.nyu.edu/students/student-information-and-resources/student-community-standards/university-student-conduct-policies.html</a></label>
+              <label> By checking this box, I hereby acknowledge that I have read and agree to comply with New York University’s Code of Conduct, which can be found here: <a href="https://www.nyu.edu/students/student-information-and-resources/student-community-standards/university-student-conduct-policies.html">https://www.nyu.edu/students/student-information-and-resources/student-community-standards/university-student-conduct-policies.html</a> *</label>
             </div>
           </div>
           <div class="field">
             <div class="ui checkbox">
               <input type="checkbox" ng-model="user.confirmation.sponsors">
-              <label> By checking this box, I understand and consent to the sharing of all of the information I have provided in this application with New York University and all of HackNYU’s present and future sponsors and partners.</label>
+              <label> By checking this box, I understand and consent to the sharing of all of the information I have provided in this application with New York University and all of HackNYU’s present and future sponsors and partners. *</label>
             </div>
           </div>
 
@@ -321,7 +344,7 @@
             <button type="submit"
                     class="fluid ui purple button"
                     ng-click="">
-              Submit (disabled for now)
+              Submit RSVP (disabled for now)
             </button>
           </div>
 
