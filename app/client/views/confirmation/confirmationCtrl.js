@@ -158,6 +158,15 @@ angular.module('reg')
                 }
               ]
             },
+            generalRelease: {
+              identifier: 'generalRelease',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'You must agree to the HackNYU release'
+                }
+              ]
+            },
           }
         });
       }

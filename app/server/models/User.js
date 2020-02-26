@@ -121,6 +121,7 @@ var confirmation = {
   minor: Boolean,
   nyucoc: Boolean,
   sponsors: Boolean,
+  generalRelease: Boolean,
 };
 
 var status = {
@@ -388,7 +389,8 @@ schema.statics.validateConfirmation = function(confirmation, cb){
     confirmation.photos &&
     confirmation.minor &&
     confirmation.nyucoc &&
-    confirmation.sponsors
+    confirmation.sponsors &&
+    confirmation.generalRelease
     ));
 };
 
