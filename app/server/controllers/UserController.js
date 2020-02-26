@@ -669,7 +669,6 @@ UserController.checkInById = function(id, user, callback){
   User.findOneAndUpdate({
     _id: id,
     verified: true,
-    admitted: true
   },{
     $set: {
       'status.checkedIn': true,
