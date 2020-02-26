@@ -121,8 +121,6 @@ angular.module('reg')
       $scope.acceptUser = function($event, user, index) {
         $event.stopPropagation();
 
-        console.log(user);
-
         swal({
           buttons: {
             cancel: {
