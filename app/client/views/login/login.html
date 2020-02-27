@@ -12,6 +12,7 @@
           {{error}}
         </div>
 
+        <!--
         <div ng-show="loginState === 'login'">
           <div class="ui login-password form">
             <form ng-submit="login()">
@@ -29,6 +30,7 @@
                        placeholder="Password (at least 6 characters)"
                        ng-model="password" required>
               </div>
+
               <div class="field">
                 <button id="login-password"
                         type="submit"
@@ -38,7 +40,11 @@
               </div>
             </form>
           </div>
+          -->
 
+          <br>
+          <p>We are currently fixing server issues. We'll notify you once everything's fixed. Sorry for any inconveniences!</p>
+          <!--
           <div style="margin-top: 0.6em" class="ui form" ng-show="regIsOpen">
             <div class="field">
               <button id="register"
@@ -49,6 +55,7 @@
               </button>
             </div>
           </div>
+          -->
         </div>
 
         <div ng-show="loginState === 'forgot'">
@@ -74,11 +81,13 @@
 
         <br>
 
+        <!--
         <div ng-show="loginState === 'login'" class="forgot">
           <a href="#" ng-click="setLoginState('forgot')">
             Forgot Password?
           </a>
         </div>
+        -->
 
         <div ng-show="loginState === 'forgot'" class="forgot">
           <a href="#" ng-click="setLoginState('login')">
