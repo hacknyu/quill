@@ -372,19 +372,19 @@ schema.statics.validateProfile = function(profile, cb){
 
 schema.statics.validateConfirmation = function(confirmation, cb){
   return cb(!(
-    confirmation.phone.length > 0 &&
-    confirmation.dob.length > 0 &&
-    confirmation.shirt.length > 0 &&
-    confirmation.gradMonth.length > 0 &&
-    confirmation.gradYear.length > 0 &&
+    confirmation.phone && confirmation.phone.length > 0 &&
+    confirmation.dob && confirmation.dob.length > 0 &&
+    confirmation.shirt && confirmation.shirt.length > 0 &&
+    confirmation.gradMonth && confirmation.gradMonth.length > 0 &&
+    confirmation.gradYear && confirmation.gradYear.length > 0 &&
     (!confirmation.goesToNYU || (confirmation.netID && confirmation.netID.length > 0 && confirmation.nyuSchool && confirmation.nyuSchool.length > 0)) &&
     (!confirmation.isInternational || (confirmation.internationalCountry && confirmation.internationalCountry.length > 0)) &&
     (!confirmation.wantsHardware || (confirmation.hardware && confirmation.hardware.length > 0)) &&
     (!confirmation.hasDietaryRestrictions || (confirmation.dietaryRestrictions && confirmation.dietaryRestrictions.length > 0)) &&
     (!confirmation.hasAccessibilityNeeds || (confirmation.accessibilityNeeds && confirmation.accessibilityNeeds.length > 0)) &&
-    confirmation.emergencyName.length > 0 &&
-    confirmation.emergencyRelation.length > 0 &&
-    confirmation.emergencyPhone.length > 0 &&
+    confirmation.emergencyName && confirmation.emergencyName.length > 0 &&
+    confirmation.emergencyRelation && confirmation.emergencyRelation.length > 0 &&
+    confirmation.emergencyPhone && confirmation.emergencyPhone.length > 0 &&
     confirmation.apis &&
     confirmation.photos &&
     confirmation.minor &&
