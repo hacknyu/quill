@@ -77,7 +77,7 @@ var profile = {
 // Only after confirmed
 var confirmation = {
   phone: String,
-  dob: Date,
+  dob: String,
   shirt: {
     type: String,
     enum: {
