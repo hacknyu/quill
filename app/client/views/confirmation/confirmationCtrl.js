@@ -32,8 +32,7 @@ angular.module('reg')
               $state.go("app.dashboard");
             });
           }, response => {
-            console.log(response);
-            swal("Uh oh!", "Please Fill Out The Required Fields", "error");
+            swal("Uh oh!", "Please Fill Out The Required Fields. Make sure your date of birth is in MM/DD/YYYY format", "error");
           });
       }
 
