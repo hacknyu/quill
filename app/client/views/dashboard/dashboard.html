@@ -71,15 +71,6 @@
         </div>
 
         <div
-          ng-class="settings.timeConfirm"
-          ng-if="dashState('admittedAndCanConfirm') || dashState('confirmed') || dashState('declined')">
-          <strong>
-            Confirmation Deadline:
-          </strong>
-          {{ timeConfirm }}
-        </div>
-
-        <div
           ng-if="dashState('openAndIncomplete')"
           class="description">
           <p>
