@@ -312,85 +312,85 @@ angular.module('reg')
             fields: [
               {
                 name: 'Phone Number',
-                value: user.confirmation.phone
+                value: (user.confirmation ? user.confirmation.phone : "")
               },{
                 name: 'Date of Birth',
-                value: user.confirmation.dob
+                value: (user.confirmation ? user.confirmation.dob : "")
               },{
                 name: 'Shirt Size',
-                value: user.confirmation.shirt
+                value: (user.confirmation ? user.confirmation.shirt : "")
               },{
                 name: 'Graduation Month',
-                value: user.confirmation.gradMonth
+                value: (user.confirmation ? user.confirmation.gradMonth : "")
               },{
                 name: 'Graduation Year',
-                value: user.confirmation.gradYear
+                value: (user.confirmation ? user.confirmation.gradYear : "")
               },{
                 name: 'Interested in Track',
-                value: user.confirmation.track
+                value: (user.confirmation ? user.confirmation.track : "")
               },{
                 name: 'Is Minor',
-                value: user.confirmation.isMinor,
+                value: (user.confirmation ? user.confirmation.isMinor : ""),
                 type: 'boolean'
               },{
                 name: 'Is NYU Student',
-                value: user.confirmation.goesToNYU,
+                value: (user.confirmation ? user.confirmation.goesToNYU : ""),
                 type: 'boolean'
               },{
                 name: 'NetID',
-                value: user.confirmation.netID
+                value: (user.confirmation ? user.confirmation.netID : "")
               },{
                 name: 'NYU School',
-                value: user.confirmation.nyuSchool
+                value: (user.confirmation ? user.confirmation.nyuSchool : "")
               },{
                 name: 'Is International',
-                value: user.confirmation.isInternational,
+                value: (user.confirmation ? user.confirmation.isInternational : ""),
                 type: 'boolean'
               },{
                 name: 'International Country',
-                value: user.confirmation.internationalCountry
+                value: (user.confirmation ? user.confirmation.internationalCountry : "")
               },{
                 name: 'Wants Hardware',
-                value: user.confirmation.wantsHardware,
+                value: (user.confirmation ? user.confirmation.wantsHardware : ""),
                 type: 'boolean'
               },{
                 name: 'Hardware Wanted',
-                value: user.confirmation.hardware
+                value: (user.confirmation ? user.confirmation.hardware : "")
               },{
                 name: 'Has Dietary Restrictions',
-                value: user.confirmation.hasDietaryRestrictions,
+                value: (user.confirmation ? user.confirmation.hasDietaryRestrictions : ""),
                 type: 'boolean'
               },{
                 name: 'Dietary Restrictions',
-                value: user.confirmation.dietaryRestrictions
+                value: (user.confirmation ? user.confirmation.dietaryRestrictions : "")
               },{
                 name: 'Has Accessibility Needs',
-                value: user.confirmation.hasAccessibilityNeeds,
+                value: (user.confirmation ? user.confirmation.hasAccessibilityNeeds : ""),
                 type: 'boolean'
               },{
                 name: 'AccessibilityNeeds',
-                value: user.confirmation.accessibilityNeeds
+                value: (user.confirmation ? user.confirmation.accessibilityNeeds : "")
               },{
                 name: 'Github',
-                value: user.confirmation.github
+                value: (user.confirmation ? user.confirmation.github : "")
               },{
                 name: 'Linkedin',
-                value: user.confirmation.linkedin
+                value: (user.confirmation ? user.confirmation.linkedin : "")
               },{
                 name: 'Website',
-                value: user.confirmation.website
+                value: (user.confirmation ? user.confirmation.website : "")
               },{
                 name: 'Emergency Contact Name',
-                value: user.confirmation.emergencyName,
+                value: (user.confirmation ? user.confirmation.emergencyName : "")
               },{
                 name: 'Emergency Contact Relation',
-                value: user.confirmation.emergencyRelation
+                value: (user.confirmation ? user.confirmation.emergencyRelation : "")
               },{
                 name: 'Emergency Contact Phone Number',
-                value: user.confirmation.emergencyPhone,
+                value: (user.confirmation ? user.confirmation.emergencyPhone : "")
               },{
                 name: 'Additional Notes',
-                value: user.confirmation.notes
+                value: (user.confirmation ? user.confirmation.notes : "")
               }
             ]
           }
