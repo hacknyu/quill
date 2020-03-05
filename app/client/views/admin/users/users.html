@@ -93,7 +93,7 @@
           <tr>
             <th>Actions</th>
             <th>V/S/A/C</th>
-            <th>Minor</th>
+            <th>Minor/Completed Forms?</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>E-mail address</th>
@@ -178,8 +178,8 @@
             </td>
 
             <td
-              class="collapsing" style="background-color: {{user.confirmation.isMinor ? 'red' : 'lightgreen'}}">
-              {{user.confirmation.isMinor ? "Yes" : "No"}}
+              class="collapsing" style="background-color: {{user.confirmation.isMinor ? (user.confirmation.completedMinorForms ? 'lightgreen' : 'red') : 'white'}}">
+              {{user.confirmation.isMinor ? (user.confirmation.completedMinorForms ? "Yes" : "No") : "" }}
             </td>
 
             <td>
